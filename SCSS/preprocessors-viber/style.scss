@@ -1,0 +1,60 @@
+// 1. VARIABLES
+$colordark: #222;
+$colorlight: green;
+$size: 100px;
+
+// 2. FUNCTION - darken()  lighten()
+
+// 3. OPERATION (/ * - +)
+
+// 4. hierachical code / selector extension
+
+body {
+  background-color: $colordark;
+
+}
+
+button {
+  background-image: 
+    linear-gradient(
+      darken($colorlight, 7%) ,
+      lighten($colorlight, 60%),
+      darken($colorlight, 7%)
+    );
+  width: $size;
+  height: $size;
+  border-radius: 100%;
+  color: lighten($colordark, 100%);
+  border: $size/30 solid darken($colorlight, 7%) ;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 0 $size/20 $size/100 darken($colordark, 7%);
+  text-shadow: 0px 0px $size/100 darken($colorlight, 7%) ;
+  font-size: $size/6;
+
+  &:hover {
+    box-shadow: 0 0 $size/100 $size/100 darken($colordark, 7%);
+    background-image: 
+      linear-gradient(
+        lighten($colorlight, 60%),
+        darken($colorlight, 7%),
+        lighten($colorlight, 60%),
+        );
+    border-color: $colorlight;
+  }
+
+  &:active {
+    width: $size;
+    height: $size;
+    color: darken($colorlight, 15%);
+    border: $size/30 double darken($colorlight, 10%) ;
+    font-size: $size/5;
+    background-image: 
+    linear-gradient(
+      darken($colorlight, 7%) ,
+      lighten($colorlight, 60%),
+      darken($colorlight, 7%)
+    );
+  }
+}
+
